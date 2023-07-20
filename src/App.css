@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -32,7 +35,100 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+
+}
+
+.marginSinginUserPage {
+  margin-top: 40px;
+}
+
+.color1 {
+  color: #30B88F;
+  font-size: 25px;
+}
+
+.inputBox {
+  position: relative;
+  width: 250px;
+  margin-top: 20px;
+
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 25px;
+  border: none;
+  background-color: rgb(234, 241, 241);
+  /* border: 2px solid rgba(255,255,255,0.25); */
+  flex: 1 !important;
+  justify-content: 'space-between';
+  flex-direction: 'row';
+}
+
+.loginButton {
+  margin: 20px 65px !important;
+  border: none;
+  color: white;
+  padding: 15px 38px;
+  background-color: #30B88F;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
+.marginset {
+  margin-bottom: 20px;
+}
+
+.roundCircle {
+  height: 45px !important;
+  width: 45px !important;
+  border-radius: 50%;
+  border: 1px solid black;
+
+  display: table-cell;
+}
+
+.onrow {
+  background-color: red;
+  display: table-cell;
+}
+
+/* User login DashBoard Page */
+
+
+.Aligement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.para {
+  color: #30B88F;
+  font-size: 30px;
+  margin: 10px;
+}
+
+.DahboardButton {
+
+  border: none;
+  color: white;
+  padding: 30px 15px;
+  background-color: #30B88F;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0px 5px;
+  cursor: pointer;
+  border-radius: 5%;
 }
