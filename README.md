@@ -1,3 +1,9 @@
+# packges install
+1- npm i react-router-dom
+2- npm install @mui/material @emotion/react @emotion/styled
+2- npm install @mui/material @mui/styled-engine-sc styled-components
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

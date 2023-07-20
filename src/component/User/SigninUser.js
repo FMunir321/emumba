@@ -1,3 +1,4 @@
+import './User.css'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -5,8 +6,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-
-// import { Password } from '@mui/icons-material';
 
 export default function SigninUser() {
     const navigate = useNavigate();
@@ -20,24 +19,8 @@ export default function SigninUser() {
 
     function loginHandle() {
         console.log('login');
-        navigate('user/dashboard')
+        navigate('user/dashboard', { state: { signInUser } });
     }
-
-    // function usernameHandler(e) {
-    //   let Item = e.target.value;
-    //   console.log(Item);
-    //   setUsername(Item);
-    //   console.log(Username);
-
-    // }
-    // function passwordHandler(e) {
-    //   let Item = e.target.value;
-    //   if(Item.length > 4){
-    //     alert('pincode must be 4 digit')
-    //   }
-    //   setPincode(Item);
-    //   console.log(Pincode);
-    // }
 
     function handleInput(e) {
         const name = e.target.name;
