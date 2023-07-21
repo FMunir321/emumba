@@ -1,7 +1,7 @@
 import './User.css'
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-
+import Modal from '../Modal'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
@@ -9,6 +9,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function SigninUser() {
     const navigate = useNavigate();
+    const [isOpen, setIsOpen] = useState(false);
+    const closeModal = () => setIsOpen(false);
 
     const [signInUser, setsignInUser] = useState({
         Username: '',
@@ -34,6 +36,10 @@ export default function SigninUser() {
     }
     return (
         <div className='App marginSinginUserPage'>
+
+            <button onClick={() => setIsOpen(true)}>Open Model</button>
+            {isOpen && <Modal closeModal={closeModal} />}
+
             <b className='color1'>Sign In as User</b>
 
             <form action='' onSubmit={loginHandle}>

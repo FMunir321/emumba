@@ -8,8 +8,17 @@ const MyModal = ({ closeModal }) => {
                 contentLabel="Example Modal"
                 onRequestClose={() => closeModal(false)}
             >
-                <div style={{ backgroundColor: 'red', width: '500px' }}>
-                    This is the content of the pop-up.
+                <div className='App'>
+                    <p>Sign In As Admin</p>
+                    <div>
+                        <h3>Change Password</h3>
+                        <div className='inputBox'>
+                            <input type='number' placeholder="Password" name='ConfirmPassword' id='ConfirmPassword'></input>
+                        </div>
+                        <div className='inputBox'>
+                            <input type='number' placeholder="Confirm Password"  name='ConfirmPassword' id='ConfirmPassword'></input>
+                        </div>
+                    </div>
                 </div>
             </ReactModal>
             <button onClick={closeModal}>close modal</button>
