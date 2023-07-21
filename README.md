@@ -1,7 +1,8 @@
 # packges install
 1- npm i react-router-dom
 2- npm install @mui/material @emotion/react @emotion/styled
-2- npm install @mui/material @mui/styled-engine-sc styled-components
+3- npm install @mui/material @mui/styled-engine-sc styled-components
+4- npm install react-modal
 
 
 # Getting Started with Create React App

@@ -1,4 +1,3 @@
-import './User.css'
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -7,7 +6,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-export default function SigninUser() {
+export default function Login() {
     const navigate = useNavigate();
 
     const [signInUser, setsignInUser] = useState({
@@ -34,7 +33,7 @@ export default function SigninUser() {
     }
     return (
         <div className='App marginSinginUserPage'>
-            <b className='color1'>Sign In as User</b>
+            <b className='color1'>Sign In As Admin</b>
 
             <form action='' onSubmit={loginHandle}>
 
@@ -59,7 +58,7 @@ export default function SigninUser() {
                 <div className='roundCircle'><LinkedInIcon style={{ margin: '10px' }} /></div>
             </div>
 
-            <p>Or Are you an admin? <Link to='login' className='linkstyle'>SignIn as admin instead?</Link></p>
+            <p>Or Are you an admin? <Link to='/' className='linkstyle'>SignIn as user instead?</Link></p>
 
         </div>
     )
