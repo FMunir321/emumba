@@ -1,36 +1,36 @@
-.marginSinginUserPage {
-    margin-top: 40px;
+#root {
+    display: flex;
+    justify-content: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+
 }
 
-.color1 {
+.pTag {
     color: #30B88F;
     font-size: 25px;
 }
 
-.inputBox {
-    position: relative;
+form input {
+    display: block;
     width: 250px;
-    margin-top: 20px;
-
-}
-
-.inputBox input {
-    width: 100%;
-    padding: 15px;
-    border-radius: 25px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.43;
+    color: black;
+    background-color: aliceblue;
     border: none;
-    background-color: rgb(234, 241, 241);
-    /* border: 2px solid rgba(255,255,255,0.25); */
-    flex: 1 !important;
-    justify-content: 'space-between';
-    flex-direction: 'row';
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .loginButton {
     margin: 20px 65px !important;
     border: none;
     color: white;
-    padding: 15px 38px;
+    padding: 10px 40px;
     background-color: #30B88F;
     text-align: center;
     text-decoration: none;
@@ -41,29 +41,13 @@
 
 }
 
-.marginset {
-    margin-bottom: 20px;
-}
-
-.roundCircle {
-    height: 45px !important;
-    width: 45px !important;
-    border-radius: 50%;
-    border: 1px solid black;
-
-    display: table-cell;
-}
-
-.onrow {
-    background-color: red;
-    display: table-cell;
-}
-.linkstyle {
+.Linkstyle {
     text-decoration: none;
     color: #30B88F;
 }
 
-/* User login DashBoard Page */
+
+/* Dashboard page css */
 
 .Aligement {
     display: flex;
@@ -72,6 +56,7 @@
     flex-direction: column;
 }
 
+
 .para {
     color: #30B88F;
     font-size: 30px;
@@ -79,10 +64,9 @@
 }
 
 .DahboardButton {
-
     border: none;
     color: white;
-    padding: 30px 15px;
+    padding: 25px 10px;
     background-color: #30B88F;
     text-align: center;
     text-decoration: none;
@@ -90,4 +74,40 @@
     margin: 0px 5px;
     cursor: pointer;
     border-radius: 5%;
+}
+
+/* Records Modal page Css */
+
+.closeButton {
+    margin-left: 392px;
+    background: #30B88F;
+    border: none;
+    color: white;
+}
+
+.paramodal {
+    margin-top: -15px;
+    margin-bottom: 40px;
+}
+
+.searchbarInput {
+    width: 250px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.43;
+    color: black;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 800px;
+}
+ 
+th {
+    background-color: #2acfba;
+    
 }

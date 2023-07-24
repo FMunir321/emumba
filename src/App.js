@@ -10,6 +10,8 @@ import {
 import Dashboard from './component/User/Dashboard';
 import SigninUser from './component/User/SigninUser';
 import Login from './component/Admin/Login';
+import ReactModal from 'react-modal';
+import RecordsModal from './component/User/RecordsModal';
 
 function App() {
   return (

@@ -1,0 +1,139 @@
+.modalBackground {
+    width: 320px;
+    height: 100vh;
+    background-color: #5cd6b5;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer {
+    width: 300px;
+    height: 500px;
+    border-radius: 12px;
+    background-color: #5cd6b5;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .modalContainer .title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .modalContainer .body {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  
+  .modalContainer .footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer .footer button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #cancelBtn {
+    background-color: crimson;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ptag {
+    justify-content: center;
+    display: flex;
+}
+
+.inputBoxM {
+    margin: 20px 45px;
+    position: relative;
+    width: 250px;
+}
+
+.inputBoxM input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(234, 241, 241);
+    /* border: 2px solid rgba(255,255,255,0.25); */
+    flex: 1 !important;
+    justify-content: 'space-between';
+    flex-direction: 'row';
+}
+
+.modalBGColr {
+    background-color: #0cc492;
+    color: white;
+}
+.iconTopRight {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.Cancelbutton {
+    margin-right: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 7%;
+}
+
+.savebutton {
+    background-color: #5cd6b5;
+    color: white;
+    border: none;
+    padding: 5px 30px;
+}

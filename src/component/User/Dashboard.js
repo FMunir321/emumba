@@ -1,22 +1,33 @@
-import React from 'react';
+
 import { useNavigate, route, useLocation } from 'react-router-dom';
 import './User.css';
+import React, { useState } from 'react';
+import ReactModal from 'react-modal';
+import RecordsModal from './RecordsModal';
 
 export default function Dashboard() {
   const location = useLocation();
-  console.log(location.state);
-  const userData = location.state.signInUser;
+  const userData = location.state;
 
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const closeModal = () => setIsOpenModal(false);
+
+  function clickHandler(data) {
+    console.log(data)
+  }
 
   return (
-    <div className='Aligement'>
+    <div className=''>
+
       {/* <img src={person} alt="Italian Trulli"></img> */}
-      <p className='para'>Hi! {userData.Username}</p>
+      <p className='para'>Hi! {userData}</p>
       <div>
         <button className='DahboardButton'>PUNCH ATTENDANCE</button>
         <button className='DahboardButton'>APPLY FOR LEAVE</button>
-        <button className='DahboardButton'>WATCH PREVIOUS RECORD</button>
+        <button className='DahboardButton' onClick={() => setIsOpenModal(true)}>WATCH PREVIOUS RECORD</button>
       </div>
+      {isOpenModal && <RecordsModal closeModal={closeModal}/>}
     </div>
   )
 }
+
