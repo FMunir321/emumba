@@ -3,16 +3,14 @@ import ReactModal from 'react-modal';
 import './Modal.css';
 import './User/User.css';
 import { useForm } from "react-hook-form";
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 
 const MyModal = ({ closeModal }) => {
 
-    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
-        formState: { errors },
     } = useForm();
 
     const [Iserror, setIserror] = useState(false);

@@ -1,10 +1,20 @@
-import React from 'react'
-const records = [
-    { name: 'Saad Mushtaq', position: 'Frontend Engineer', email: 'saadmushtaq@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
-    { name: 'Saad Mushtaq2', position: 'Frontend Engineer2', email: 'saadmushtaq2@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
-]
+import React, { useState } from 'react';
+import './Admin.css';
+import Modal from 'react-modal';
+
+
 
 export default function Setting() {
+    const records = [
+        { id: '1', name: 'Saad Mushtaq', position: 'Frontend Engineer', email: 'saadmushtaq@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
+        { id: '2', name: 'Saad Mushtaq2', position: 'Frontend Engineer2', email: 'saadmushtaq2@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
+        { id: '2', name: 'Saad Mushtaq3', position: 'Frontend Engineer3', email: 'saadmushtaq2@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
+    ]
+    // const [record, setRecord] = useState(records);
+    const [isOpen, setIsOpen] = useState(false);
+    const [allRecords, setallRecords] = useState([]);
+    // console.log(allRecords);
+
     return (
         <div className='overall'>
             <p>Setting</p>
@@ -20,7 +30,7 @@ export default function Setting() {
                 </tr>
 
                 {
-                    records.map((data) => (
+                    records.map((data, index) => (
                         <tr>
                             <td>{data.name}</td>
                             <td>{data.position}</td>
@@ -28,13 +38,47 @@ export default function Setting() {
                             <td>{data.totalhrs}</td>
                             <td>{data.dailyaveragehrs}</td>
                             <td>
-                                <button className='deletebutton'>Delete</button>
-                                <button className='editbutton'>Edit</button>
+                                <button className='deletebutton' onClick={() => { setallRecords(allRecords.filter(a => a.id !== allRecords.id)); }}>Delete</button>
+                                <button className='editbutton' onClick={() => setIsOpen(true)}>Edit</button>
                             </td>
                         </tr>
                     ))
                 }
+
+
             </table>
+            <div className='popup'>
+                <Modal
+                    isOpen={isOpen}
+                    contentLabel="Example Modal"
+                    onRequestClose={() => isOpen(false)}
+                    style={
+                        {
+                            overlay: {
+                                backgroundColor: 'grey'
+                            },
+                            content: {
+                                backgroundColor: '#30B88F',
+                                border: 'none',
+                                textAlign: 'Center',
+                                color: 'white'
+                            }
+                        }
+                    }
+                >
+                    <button className='closeButton' onClick={() => setIsOpen(false)}>x</button>
+                    <h3>Edit Info</h3>
+                    <input type='text' id='username' name='username' placeholder='Username'></input>
+                    <input type='text' id='username' name='username' placeholder='Username'></input>
+                    <input type='text' id='username' name='username' placeholder='Username'></input>
+                    <input type='text' id='username' name='username' placeholder='Username'></input>
+                    <div>
+                        <button className='buttonP' id='cancelBtn' onClick={() => setIsOpen(false)}>Cancel</button>
+                        <button className='buttonP'>Save</button>
+                    </div>
+
+                </Modal>
+            </div >
         </div>
     )
 }

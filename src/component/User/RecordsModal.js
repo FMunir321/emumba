@@ -1,5 +1,4 @@
-import { CenterFocusStrong } from '@mui/icons-material';
-import React, { useState } from 'react';
+import React from 'react';
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root')

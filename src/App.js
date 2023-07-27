@@ -1,21 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Link,
 } from "react-router-dom";
 import Dashboard from './component/User/Dashboard';
-import SigninUser from './component/User/SigninUser';
 import Login from './component/Admin/Login';
-import ReactModal from 'react-modal';
-import RecordsModal from './component/User/RecordsModal';
 import AdminDashboard from './component/Admin/AdminDashboard';
 import Today from './component/Admin/Today';
 import Overall from './component/Admin/Overall';
 import Setting from './component/Admin/Setting';
+import Test from './component/Admin/test';
+
 function App() {
   return (
     <>
@@ -27,7 +23,7 @@ function App() {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <SigninUser />
+    element: <Test />
   },
   {
     path: "user/dashboard",

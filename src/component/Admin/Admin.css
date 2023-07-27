@@ -131,3 +131,32 @@ h2 {
 .editbutton {
     background-color: rgb(37 239 196);
 }
+
+.ReactModalPortal input {
+    display: block;
+    width: 250px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.43;
+    color: black;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.buttonP {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: rgb(37 239 196);
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#cancelBtn {
+    background-color: crimson;
+}

@@ -1,8 +1,6 @@
-
-import { useNavigate, route, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './User.css';
 import React, { useState } from 'react';
-import ReactModal from 'react-modal';
 import RecordsModal from './RecordsModal';
 
 export default function Dashboard() {
@@ -11,10 +9,6 @@ export default function Dashboard() {
 
   const [isOpenModal, setIsOpenModal] = useState(false);
   const closeModal = () => setIsOpenModal(false);
-
-  function clickHandler(data) {
-    console.log(data)
-  }
 
   return (
     <div className=''>

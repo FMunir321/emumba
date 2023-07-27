@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, route, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Admin.css';
 
 export default function AdminDashboard() {

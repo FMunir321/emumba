@@ -3,6 +3,7 @@
 2- npm install @mui/material @emotion/react @emotion/styled
 3- npm install @mui/material @mui/styled-engine-sc styled-components
 4- npm install react-modal
+5- npm i reactjs-popup
 
 
 # Getting Started with Create React App
