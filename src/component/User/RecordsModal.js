@@ -44,7 +44,7 @@ const RecordsModal = ({ closeModal }) => {
         <p className='paramodal'>Saad Mushtaq</p>
         <input className='searchbarInput' type="search" placeholder="Search by Date" />
         <div className='App'>
-        <table >
+        <table className='tableU'>
           <tr>
             <th>Date</th>
             <th>Status</th>

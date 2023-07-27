@@ -25,7 +25,7 @@ export default function SigninUser() {
                 <button className='loginButton' onClick={navigateToDashboard}>Login</button>
             </form>
             <p className=''>Or Sign in using social platforms</p>
-            <p className='para'>Or Are you an admin? <Link to='login' className='Linkstyle'>SignIn as admin instead?</Link></p>
+            <p className='para'>Or Are you an admin? <Link to='admin' className='Linkstyle'>SignIn as admin instead?</Link></p>
 
         </div>
 
