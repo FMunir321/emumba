@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import SingninUser from './component/User/SigninUser'
 import Dashboard from './component/User/Dashboard';
 import Login from './component/Admin/Login';
 import AdminDashboard from './component/Admin/AdminDashboard';
@@ -23,7 +24,7 @@ function App() {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Test />
+    element: <SingninUser />
   },
   {
     path: "user/dashboard",

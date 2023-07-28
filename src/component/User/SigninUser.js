@@ -2,6 +2,10 @@ import './User.css'
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import MyModal from '../Modal';
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import GoogleIcon from '@mui/icons-material/Google';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function SigninUser() {
     const navigate = useNavigate();
@@ -25,6 +29,10 @@ export default function SigninUser() {
                 <button className='loginButton' onClick={navigateToDashboard}>Login</button>
             </form>
             <p className=''>Or Sign in using social platforms</p>
+            <FacebookOutlinedIcon />
+            <TwitterIcon />
+            <GoogleIcon />
+            <LinkedInIcon />
             <p className='para'>Or Are you an admin? <Link to='admin' className='Linkstyle'>SignIn as admin instead?</Link></p>
 
         </div>

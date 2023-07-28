@@ -3,7 +3,6 @@ import ReactModal from 'react-modal';
 import './Modal.css';
 import './User/User.css';
 import { useForm } from "react-hook-form";
-import { useNavigate } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 
 const MyModal = ({ closeModal }) => {
@@ -16,7 +15,7 @@ const MyModal = ({ closeModal }) => {
     const [Iserror, setIserror] = useState(false);
 
     const onSubmit = (data) => {
-        if (data.Password != data.ConfirmPassword) {
+        if (data.Password !== data.ConfirmPassword) {
             setIserror(true);
         }
         else {
