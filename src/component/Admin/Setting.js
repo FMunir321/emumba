@@ -2,19 +2,23 @@ import React, { useState } from 'react';
 import './Admin.css';
 import Modal from 'react-modal';
 
-
+const records = [
+    { id: '1', name: 'Saad Mushtaq', position: 'Frontend Engineer', email: 'saadmushtaq@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
+    { id: '2', name: 'Saad Mushtaq2', position: 'Frontend Engineer2', email: 'saadmushtaq2@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
+    { id: '3', name: 'Saad Mushtaq3', position: 'Frontend Engineer3', email: 'saadmushtaq2@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
+]
 
 export default function Setting() {
-    const records = [
-        { id: '1', name: 'Saad Mushtaq', position: 'Frontend Engineer', email: 'saadmushtaq@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
-        { id: '2', name: 'Saad Mushtaq2', position: 'Frontend Engineer2', email: 'saadmushtaq2@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
-        { id: '2', name: 'Saad Mushtaq3', position: 'Frontend Engineer3', email: 'saadmushtaq2@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
-    ]
+
     // const [record, setRecord] = useState(records);
     const [isOpen, setIsOpen] = useState(false);
-    const [allRecords, setallRecords] = useState([]);
+    const [allRecords, setallRecords] = useState(records);
     // console.log(allRecords);
 
+    function handledelete(id){
+        console.log(id);
+        setallRecords(allRecords.filter(a => a.id !== id))
+    }
     return (
         <div className='overall'>
             <p>Setting</p>
@@ -30,7 +34,7 @@ export default function Setting() {
                 </tr>
 
                 {
-                    records.map((data, index) => (
+                    allRecords.map((data, index) => (
                         <tr>
                             <td>{data.name}</td>
                             <td>{data.position}</td>
@@ -38,7 +42,7 @@ export default function Setting() {
                             <td>{data.totalhrs}</td>
                             <td>{data.dailyaveragehrs}</td>
                             <td>
-                                <button className='deletebutton' onClick={() => { setallRecords(allRecords.filter(a => a.id !== allRecords.id)); }}>Delete</button>
+                                <button className='deletebutton' onClick={() =>  handledelete(data.id) }>Delete</button>
                                 <button className='editbutton' onClick={() => setIsOpen(true)}>Edit</button>
                             </td>
                         </tr>
