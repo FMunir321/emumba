@@ -3,22 +3,35 @@ import './Admin.css';
 import Modal from 'react-modal';
 
 const records = [
-    { id: '1', name: 'Saad Mushtaq', position: 'Frontend Engineer', email: 'saadmushtaq@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
-    { id: '2', name: 'Saad Mushtaq2', position: 'Frontend Engineer2', email: 'saadmushtaq2@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
-    { id: '3', name: 'Saad Mushtaq3', position: 'Frontend Engineer3', email: 'saadmushtaq2@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
+    { id: '1', firstname: 'Saad1', lastname: 'Mushtaq1', position: 'Frontend Engineer', email: 'saadmushtaq@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
+    { id: '2', firstname: 'Saad2', lastname: 'Mushtaq2', position: 'Frontend Engineer2', email: 'saadmushtaq2@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
+    { id: '3', firstname: 'Saad3', lastname: 'Mushtaq3', position: 'Frontend Engineer3', email: 'saadmushtaq2@gmail.com', totalhrs: '160', dailyaveragehrs: '8.00' },
 ]
 
 export default function Setting() {
 
-    // const [record, setRecord] = useState(records);
     const [isOpen, setIsOpen] = useState(false);
     const [allRecords, setallRecords] = useState(records);
-    // console.log(allRecords);
+    const [updateState, setUpdateState] = useState([]);
 
-    function handledelete(id){
+    function handledelete(id) {
         console.log(id);
         setallRecords(allRecords.filter(a => a.id !== id))
     }
+
+    function handleEdit(data) {
+        setUpdateState(data);
+        setIsOpen(true);
+    }
+
+    function Edit({ current }) {
+        return (
+            <tr>
+                <td><input type='text' name='name' value={current.name} /></td>
+            </tr>
+        )
+    }
+
     return (
         <div className='overall'>
             <p>Setting</p>
@@ -34,18 +47,20 @@ export default function Setting() {
                 </tr>
 
                 {
-                    allRecords.map((data, index) => (
-                        <tr>
-                            <td>{data.name}</td>
-                            <td>{data.position}</td>
-                            <td>{data.email}</td>
-                            <td>{data.totalhrs}</td>
-                            <td>{data.dailyaveragehrs}</td>
-                            <td>
-                                <button className='deletebutton' onClick={() =>  handledelete(data.id) }>Delete</button>
-                                <button className='editbutton' onClick={() => setIsOpen(true)}>Edit</button>
-                            </td>
-                        </tr>
+                    allRecords.map((current, index) => (
+                        updateState === current.id ? <Edit current={current} allRecords={allRecords} /> :
+                            <tr>
+                                <td>{current.firstname} {current.lastname}</td>
+                                <td>{current.position}</td>
+                                <td>{current.email}</td>
+                                <td>{current.totalhrs}</td>
+                                <td>{current.dailyaveragehrs}</td>
+                                <td>
+                                    <button className='deletebutton' onClick={() => handledelete(current.id)}>Delete</button>
+                                    <button className='editbutton' onClick={() => handleEdit(current)}>Edit</button>
+                                    {/* <button className='editbutton' onClick={() => setIsOpen(true)}>Edit</button> */}
+                                </td>
+                            </tr>
                     ))
                 }
 
@@ -54,7 +69,6 @@ export default function Setting() {
             <div className='popup'>
                 <Modal
                     isOpen={isOpen}
-                    contentLabel="Example Modal"
                     onRequestClose={() => isOpen(false)}
                     style={
                         {
@@ -72,17 +86,29 @@ export default function Setting() {
                 >
                     <button className='closeButton' onClick={() => setIsOpen(false)}>x</button>
                     <h3>Edit Info</h3>
-                    <input type='text' id='username' name='username' placeholder='Username'></input>
-                    <input type='text' id='username' name='username' placeholder='Username'></input>
-                    <input type='text' id='username' name='username' placeholder='Username'></input>
-                    <input type='text' id='username' name='username' placeholder='Username'></input>
+                    <input type='text' name='firstname' value={updateState.firstname} onChange={handleInput} ></input>
+                    <input type='text' id='lastname' name='lastname' value={updateState.lastname} onChange={handleInput} ></input>
+                    <input type='text' id='position' name='position' value={updateState.position} onChange={handleInput} ></input>
+                    <input type='text' id='email' name='email' value={updateState.email} onChange={handleInput} ></input>
                     <div>
                         <button className='buttonP' id='cancelBtn' onClick={() => setIsOpen(false)}>Cancel</button>
-                        <button className='buttonP'>Save</button>
+                        <button className='buttonP' onClick={savetData}>Save</button>
                     </div>
 
                 </Modal>
             </div >
         </div>
     )
+    function handleInput(e) {
+        const { name, value } = e.target;
+
+        setUpdateState({
+            ...updateState,
+            [name]: value
+        });
+        console.log(updateState);
+    }
+    function savetData() {
+        console.log(updateState);
+    }
 }
