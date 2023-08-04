@@ -26,9 +26,6 @@ export default function Setting() {
         setIsOpen(true);
     }
 
-    function Edit({ current }) {
-
-    }
     function filterData(e) {
         setisfilterData(true);
         const searchData = records.filter((el) => {
@@ -69,7 +66,6 @@ export default function Setting() {
                 </tr>
                 {isfilterData ?
                     filteredData.map((current, index) => (
-                        updateState === current.id ? <Edit current={current} allRecords={allRecords} /> :
                             <tr>
                                 <td>{current.firstname} {current.lastname}</td>
                                 <td>{current.position}</td>
@@ -84,7 +80,6 @@ export default function Setting() {
                     )) :
 
                     allRecords.map((current, index) => (
-                        updateState === current.id ? <Edit current={current} allRecords={allRecords} /> :
                             <tr>
                                 <td>{current.firstname} {current.lastname}</td>
                                 <td>{current.position}</td>
