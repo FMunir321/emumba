@@ -27,11 +27,7 @@ export default function Setting() {
     }
 
     function Edit({ current }) {
-        return (
-            <tr>
-                <td><input type='text' name='name' value={current.name} /></td>
-            </tr>
-        )
+
     }
     function filterData(e) {
         setisfilterData(true);
@@ -83,7 +79,6 @@ export default function Setting() {
                                 <td>
                                     <button className='deletebutton' onClick={() => handledelete(current.id)}>Delete</button>
                                     <button className='editbutton' onClick={() => handleEdit(current)}>Edit</button>
-                                    {/* <button className='editbutton' onClick={() => setIsOpen(true)}>Edit</button> */}
                                 </td>
                             </tr>
                     )) :
@@ -99,7 +94,6 @@ export default function Setting() {
                                 <td>
                                     <button className='deletebutton' onClick={() => handledelete(current.id)}>Delete</button>
                                     <button className='editbutton' onClick={() => handleEdit(current)}>Edit</button>
-                                    {/* <button className='editbutton' onClick={() => setIsOpen(true)}>Edit</button> */}
                                 </td>
                             </tr>
                     ))
@@ -151,9 +145,10 @@ export default function Setting() {
             ...updateState,
             [name]: value
         });
-        console.log(updateState);
     }
     function savetData() {
-        console.log(updateState);
+        const index = allRecords.findIndex((record) => record.id === updateState.id);
+        allRecords[index] = updateState;
+        setIsOpen(false);
     }
 }
